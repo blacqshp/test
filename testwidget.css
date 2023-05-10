@@ -1,47 +1,96 @@
-/* Popup button style */
-button {
-  background-color: #005792;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
-/* Popup container */
-.popup {
+.promo-popup {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
-/* Popup content */
-.popup-content {
+.promo-popup-content {
   background-color: #fff;
   margin: 15% auto;
-  padding: 20px;
-  border-radius: 5px;
-  width: 50%;
+  padding: 30px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+  position: relative;
 }
 
-/* Close button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
+.promo-popup-content::before {
+  content: "";
+  background-image: url("https://images.unsplash.com/photo-1523477425332-7a810fc1e1e8");
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
 
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+.promo-popup-content h2 {
+  margin-top: 0;
+  color: #ffffff;
+  font-size: 2em;
+  font-weight: 700;
+  text-shadow: 2px 2px #2c2c2c;
 }
+
+.promo-popup-content p {
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-size: 1.3em;
+  font-weight: 400;
+  text-shadow: 2px 2px #2c2c2c;
+}
+
+.promo-popup-content input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 25px;
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.8em;
+  background-color: #f7c312;
+  color: #2c2c2c;
+}
+
+.promo-popup-content .button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.promo-popup-content button {
+  padding: 12px 20px;
+  margin: 8px;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
+
+.promo-popup-content button#copy-button {
+  background-color: #2c2c2c;
+  color: #ffffff;
+}
+
+.promo-popup-content button#close-button {
+  background-color: #f7c312;
+  color: #2c2c2c;
+}
+</style>
