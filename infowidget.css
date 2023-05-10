@@ -1,5 +1,5 @@
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sigmar:wght@400;700&display=swap');
 
 /* Style for the content within the popup */
 .promo-popup {
@@ -15,7 +15,7 @@
 
 .promo-popup-content {
   /* Style for the popup content */
-  background-color: #fff;
+  background-color: #c1191e;
   margin: 15% auto;
   padding: 30px;
   border-radius: 15px;
@@ -23,7 +23,7 @@
   max-width: 500px;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Sigmar', sans-serif;
   position: relative;
 }
 
@@ -31,7 +31,7 @@
   /* Style for the background image overlay */
   content: "";
   background-image: url("https://images.unsplash.com/photo-1542291026-6d36bbf0d2c5");
-  opacity: 0.3;
+  opacity: 0.7;
   top: 0;
   left: 0;
   bottom: 0;
@@ -43,7 +43,7 @@
 .promo-popup-content h2 {
   /* Style for the popup heading */
   margin-top: 0;
-  color: #00704A;
+  color: #000000;
   font-size: 2.5em;
   font-weight: 700;
   text-shadow: 2px 2px #2c2c2c;
@@ -51,7 +51,7 @@
 
 .promo-popup-content p {
   /* Style for the popup paragraph text */
-  color: #00704A;
+  color: #000000;
   margin-bottom: 20px;
   font-size: 1.3em;
   font-weight: 400;
@@ -69,8 +69,8 @@
   font-weight: 700;
   text-align: center;
   font-size: 1.8em;
-  background-color: #00704A;
-  color: #fff;
+  background-color: #fff;
+  color: #000000;
 }
 
 .promo-popup-content .button-container {
@@ -95,11 +95,67 @@
 .promo-popup-content button#copy-button {
   /* Style for the copy button */
   background-color: #fff;
-  color: #00704A;
+  color: #000000;
 }
 
 .promo-popup-content button#close-button {
   /* Style for the close button */
-  background-color: #00704A;
-  color: #fff;
+  background-color: #fff;
+  color: #000000;
 }
+
+</style>
+
+
+<!-- This is the popup container with a unique ID and a class for styling -->
+<div id="promo-popup" class="promo-popup">
+  <!-- This is the actual popup content -->
+  <div class="promo-popup-content">
+    <!-- This is an icon from the Material Icons library -->
+    <i class="material-icons"> </i>
+    <!-- This is the heading of the popup -->
+    <h2>Heads up, visitor!</h2>
+    <!-- This is some text explaining the discount code -->
+    <p>For our opening week, use this code for 10% off, max P200:</p>
+    <!-- This is an input field containing the discount code that users can copy -->
+    <input type="text" value="ANNIV10" id="promo-code" readonly>
+    <!-- This is a container for the buttons at the bottom of the popup -->
+    <div class="button-container">
+      <!-- This is a button that copies the discount code to the clipboard -->
+      <button id="copy-button">Copy Code</button>
+      <!-- This is a button that closes the popup -->
+      <button id="close-button">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- This is a script that runs when the page finishes loading -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  // Get references to the popup, discount code input, and buttons
+  var promoPopup = document.getElementById('promo-popup');
+  var promoCode = document.getElementById('promo-code');
+  var copyButton = document.getElementById('copy-button');
+  var closeButton = document.getElementById('close-button');
+
+  // Show the popup when the page finishes loading
+  promoPopup.style.display = 'block';
+
+  // Add a click event listener to the copy button
+  copyButton.onclick = function () {
+    // Select the discount code input field
+    promoCode.select();
+    // Copy the selected text to the clipboard
+    document.execCommand('copy');
+    // Hide the popup after copying the code
+    promoPopup.style.display = 'none';
+  };
+
+  // Add a click event listener to the close button
+  closeButton.onclick = function () {
+    // Hide the popup when the close button is clicked
+    promoPopup.style.display = 'none';
+  };
+});
+</script>
+
