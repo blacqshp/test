@@ -1,0 +1,105 @@
+/* Style for the content within the popup */
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+.promo-popup {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.promo-popup-content {
+  /* Style for the popup content */
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 30px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+
+.promo-popup-content::before {
+  /* Style for the background image overlay */
+  content: "";
+  background-image: url("https://images.unsplash.com/photo-1542291026-6d36bbf0d2c5");
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.promo-popup-content h2 {
+  /* Style for the popup heading */
+  margin-top: 0;
+  color: #00704A;
+  font-size: 2.5em;
+  font-weight: 700;
+  text-shadow: 2px 2px #2c2c2c;
+}
+
+.promo-popup-content p {
+  /* Style for the popup paragraph text */
+  color: #00704A;
+  margin-bottom: 20px;
+  font-size: 1.3em;
+  font-weight: 400;
+  text-shadow: 2px 2px #2c2c2c;
+}
+
+.promo-popup-content input[type="text"] {
+  /* Style for the popup input field */
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 25px;
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.8em;
+  background-color: #00704A;
+  color: #fff;
+}
+
+.promo-popup-content .button-container {
+  /* Style for the button container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.promo-popup-content button {
+  /* Style for the buttons */
+  padding: 12px 20px;
+  margin: 8px;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
+
+.promo-popup-content button#copy-button {
+  /* Style for the copy button */
+  background-color: #fff;
+  color: #00704A;
+}
+
+.promo-popup-content button#close-button {
+  /* Style for the close button */
+  background-color: #00704A;
+  color: #fff;
+}
